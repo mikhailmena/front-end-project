@@ -20,37 +20,37 @@
 //     // .unhide()
 
 // });
+
+const $body = $("body");
+
 //hide text divs on startup
 hideDiv($("#ResumePdf"))
 hideDiv($("#aboutmetext"))
 hideDiv($("#armycareertext"))
 hideDiv($("#experiencelist"))
+hideDiv($("#skillslist"))
+hideDiv($("#goalslist"))
+hideDiv($("#achievementslist"))
 //declare hide and unhide function
 function hideDiv(div) {
     div.hide()
 }
 function unhide(div) {
-    div.fadeIn()
+    div.show()
 }
-// let $original = function original(){
-//     $(this).html($(""));
-// };
-// let $clickToView = function clickToView(){
-//     $(this).html($("<span> click to view </span>"));
+// text pop up function
+$(function() {
+    $('.popper').hover(function() {
+        $('#pop').toggle();
+    });
+    });
 
-// }
+    
 //add event listener
 $("#resumeButtons").click(function(){
     unhide($("#ResumePdf"))
 });
-$("#aboutme").mouseenter(function(){
-    $(this).html($("<span> click to view </span>"));
 
-});
-$("#aboutme").mouseleave(function(){
-    $(this).html($(""));
-
-});
 
 
 $("#aboutme").click(function(){
@@ -62,10 +62,30 @@ $("#armycareer").click(function(){
 $("#Experience").click(function(){
     unhide($("#experiencelist"))
 });
+$("#skills").click(function(){
+    unhide($("#skillslist"))
+});
+$("#goals").click(function(){
+    unhide($("#goalslist"))
+});
+$("#achievements").click(function(){
+    unhide($("#achievementslist"))
+});
 
 
-//Google Calendar API Key: AIzaSyC_Oklvdz_uov0uIiafCrX8bmjEFwBun-8
-var key= "AIzaSyC_Oklvdz_uov0uIiafCrX8bmjEFwBun-8"
+var $clickCounter = $("<div></div>");
 
-//clientId: 216823178620-qmi4u1ddf5i46f3gd35uu4vgatsne61o.apps.googleusercontent.com
-//client Secret: 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
+function clickCount(){
+    let $container = $(".container")
+    $container.addEventListener("click", function() {
+        for (var i = 0; i < 100; i++) {
+        var count = 0
+        count++
+        console.log(count)
+        ($clickCounter).prepend("count")
+        }
+})
+}
+
+
+
