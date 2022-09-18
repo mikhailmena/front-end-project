@@ -1,27 +1,53 @@
-// 'use strict';
-// var http = require('http');
-// var port = process.env.PORT || 1337;
 
-// http.createServer(function (req, res) {
-//     res.writeHead(200, { 'Content-Type': 'text/plain' });
-//     res.end('Hello World\n');
-// }).listen(port);
-// $.get("https://www.googleapis.com/auth/calendar");
-// $.get("https://www.googleapis.com/calendar/v3/calendars/calendarId");
-
-// $.get("https://www.googleapis.com/calendar/v3/users/me/calendarList")
-// calendarId("auvblb0sgs0clje78dsgj1mqis@group.calendar.google.com")
-
-
-
-
-// let $aboutme = document.getElementById("#aboutme");
-// $aboutme.addEventListener.on("click", function() {
-//     // .unhide()
-
-// });
 
 const $body = $("body");
+var eventObject = {}
+
+    
+//when dom loads 
+document.addEventListener('DOMContentLoaded', function() {
+//define these variables
+  document.getElementById("eventName").defaultValue = "Meeting with Marc";
+  document.getElementById("eventDate").defaultValue = "2022-09-19";
+  let eventName = document.getElementById("eventName").value;
+let eventDate = document.getElementById("eventDate").value;
+
+  var calendarEl = document.getElementById('calendar');
+  
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      events: [
+        {
+          eventObject }, { title  : 'Hire Marc Menard', start  : '2022-09-16', end    : '2022-09-19'
+},
+{
+  title  : 'event3',
+  start  : '2010-01-09T12:30:00',
+  allDay : false // will make the time show
+}
+]
+});
+      // initialView: 'dayGridMonth'
+      // plugins:  [googleCalendarPlugin], googleCalendarApiKey: 'AIzaSyC_Oklvdz_uov0uIiafCrX8bmjEFwBun-8', events: { googleCalendarId: '580138303029-tvvoh0sh6anf9m8vfgdogk5ttubsjl2d.apps.googleusercontent.com'}
+              
+
+  calendar.render();
+});
+
+
+function scheduleButton(){
+document.getElementById("scheduleButton").click(function(){
+    // var eventObject = {title: eventName, start: eventDate}
+    console.log(eventObject)
+
+});
+}
+
+
+
+
+
+
+
 
 //hide text divs on startup
 hideDiv($("#ResumePdf"))
@@ -45,6 +71,9 @@ $(function() {
     });
     });
 
+    
+
+ 
     
 //add event listener
 $("#resumeButtons").click(function(){
@@ -73,19 +102,7 @@ $("#achievements").click(function(){
 });
 
 
-var $clickCounter = $("<div></div>");
 
-function clickCount(){
-    let $container = $(".container")
-    $container.addEventListener("click", function() {
-        for (var i = 0; i < 100; i++) {
-        var count = 0
-        count++
-        console.log(count)
-        ($clickCounter).prepend("count")
-        }
-})
-}
 
 
 

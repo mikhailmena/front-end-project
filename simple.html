@@ -17,37 +17,14 @@
   <link href='./fullcalendar-5.11.3/lib/main.css' rel='stylesheet' />
   <link href='./simple.css' rel='stylesheet' />
   <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@5.11.3/' />
-  <script src='./fullcalendar-5.11.3/lib/main.js'></script>
+  <script defer src='./fullcalendar-5.11.3/lib/main.js'></script>
  
   
 
-  <script type="module">
 
-    
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          events: [
-            {
-              title  : 'Meeting with Marc Menard', start  : '2022-09-15' }, { title  : 'Hire Marc Menard', start  : '2022-09-16', end    : '2022-09-19'
-    },
-    {
-      title  : 'event3',
-      start  : '2010-01-09T12:30:00',
-      allDay : false // will make the time show
-    }
-  ]
-});
-          // initialView: 'dayGridMonth'
-          // plugins:  [googleCalendarPlugin], googleCalendarApiKey: 'AIzaSyC_Oklvdz_uov0uIiafCrX8bmjEFwBun-8', events: { googleCalendarId: '580138303029-tvvoh0sh6anf9m8vfgdogk5ttubsjl2d.apps.googleusercontent.com'}
-                  
-    
-      calendar.render();
-    });
   
 
-  </script>
+ 
   <title>Marc Menard's Virtual Resume</title>
     
     
@@ -175,6 +152,13 @@
               <a href="https://github.com/mikhailmena"> Github Profile</a>
               
             </div>
+            <form action="Scheduler">
+              <label>Event Name</label>
+              <input id="eventName" type="text">
+              <label>Event date</label>
+              <input id="eventDate" type="date">
+              <button id="scheduleButton">Schedule</button>
+              </form>
             <div class="popper">Schedule a Meeting with Me</div>
             <div style="background-color: white;" id='calendar'></div>
         </div>
