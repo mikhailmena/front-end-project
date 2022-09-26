@@ -100,6 +100,9 @@ code {
   background-color:#f8f8f8;
 }
 
+.col{
+  display: block;
+}
 
 .button-85 {
   padding: 0.6em 2em;
@@ -166,4 +169,9 @@ code {
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+iframe {
+  display: block;
+  border-style:none;
 }
